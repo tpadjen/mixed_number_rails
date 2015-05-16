@@ -36,16 +36,15 @@ describe 'Mixed Number Rails' do
 
 	  context 'Items' do
 	  	
-	  	# amount is not a mixed number until save
-	  	# context 'building' do
-	  	#   before(:each) do
-	  	#   	@item = Item.new(amount: "1 1/2")
-	  	#   end
+	  	context 'building' do
+	  	  before(:each) do
+	  	  	@item = Item.new(amount: "1 1/2")
+	  	  end
 
-	  	#   it 'amount is a mixed number' do
-	  	#   	expect(@item.amount).to be_a(MixedNumber)
-	  	#   end
-	  	# end
+	  	  it 'amount is a mixed number' do
+	  	  	expect(@item.amount).to be_a(MixedNumber)
+	  	  end
+	  	end
 
 	  	context 'creation' do
 	  	  it 'amount is not set without a default' do
