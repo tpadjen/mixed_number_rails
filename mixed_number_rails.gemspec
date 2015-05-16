@@ -7,11 +7,11 @@ require "mixed_number_rails/version"
 Gem::Specification.new do |s|
   s.name        = "mixed_number_rails"
   s.version     = MixedNumberRails::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of MixedNumberRails."
-  s.description = "TODO: Description of MixedNumberRails."
+  s.authors     = ["tpadjen"]
+  s.email       = ["tpadjen@gmail.com"]
+  s.homepage    = "https://github.com/tpadjen/mixed_number_rails"
+  s.summary     = "Store mixed numbers in an ActiveRecord model seamlessly with built-in validation."
+  # s.description = "TODO: Description of MixedNumberRails."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
