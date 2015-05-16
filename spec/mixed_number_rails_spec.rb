@@ -88,7 +88,18 @@ describe 'Mixed Number Rails' do
 
 	  	end
 
-	  	# TODO - test sort
+	  	context 'Sorting' do
+	  		before(:each) { Item.destroy_all }
+	  	  
+	  		it 'can sort a database mixed number' do
+	  		  a = Item.create(amount: " 2 1/2")
+	  		  b = Item.create(amount: "-3 3/4")
+	  		  c = Item.create(amount: " 1 1/2")
+
+	  		  expect(Item.all.order(:amount)).to eq([b, c, a])
+	  		end
+
+	  	end
 	    
 	  end
 
