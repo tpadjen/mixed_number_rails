@@ -65,20 +65,26 @@ describe 'Mixed Number Rails' do
 
 	  	context 'invalid mixed numbers' do
 	  	  [nil, "", "1 1221", "word", "a/b", "1 2/", "1 + 2"].each do |n|
-	  	  	it { expect(Item.new(   amount: n).amount).to eq(nil) }
-	  	  	it { expect(Item.create(amount: n).amount).to eq(nil) }
-	  	  end
+	  	  	
+	  	  	let(:item) { Item.create(amount: n) }
 
-	  	  it 'invalidates the model' do
-	  	    item = Item.create(amount: "1 1221")
-	  	    expect(item.valid?).to be(false)
-	  	  end
+	  	  	it 'does not set the initial value' do
+	  	  		expect(Item.new(amount: n).amount).to eq(nil)
+	  	  	end
 
-	  	  it 'has an error' do
-	  	  	item = Item.create(amount: "1 1221")
-	  	    expect(item.errors[:amount]).to include("is not a valid mixed number")
-	  	  end
+	  	  	it 'does not set the value on save' do
+	  	  		expect(item.amount).to eq(nil)
+	  	  	end
 
+	  	  	it 'is not valid' do
+	  	  		expect(item.valid?).to be(false)
+	  	  	end
+
+	  	  	it 'has an error message' do
+	  	  	  expect(item.errors[:amount]).to include("is not a valid mixed number")
+	  	  	end
+
+	  	  end
 
 	  	end
 
