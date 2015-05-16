@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-	serialize :amount, MixedNumber
+	mixed_number_attribute :amount
 end

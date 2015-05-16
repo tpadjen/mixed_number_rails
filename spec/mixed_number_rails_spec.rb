@@ -36,29 +36,35 @@ describe 'Mixed Number Rails' do
 
 	  context 'Items' do
 	  	
-	  	context 'building' do
-	  	  before(:each) do
-	  	  	@item = Item.build(amount: "1 1/2")
-	  	  end
+	  	# amount is not a mixed number until save
+	  	# context 'building' do
+	  	#   before(:each) do
+	  	#   	@item = Item.new(amount: "1 1/2")
+	  	#   end
 
-	  	  # it 'amount is a mixed number' do
-	  	  # 	expect(@item.amount).to be_a(MixedNumber)
-	  	  # end
-	  	end
+	  	#   it 'amount is a mixed number' do
+	  	#   	expect(@item.amount).to be_a(MixedNumber)
+	  	#   end
+	  	# end
 
 	  	context 'creation' do
-	  	  before(:each) do
-	  	  	@item = Item.create(amount: "1 1/2")
+	  	  it 'amount is not set without a default' do
+	  	  	item = Item.create()
+	  	  	expect(item.amount).to be(nil)
 	  	  end
 
 	  	  it 'amount is a mixed number' do
-	  	  	expect(@item.amount).to be_a(MixedNumber)
+	  	  	item = Item.create(amount: 0)
+	  	  	expect(item.amount).to be_a(MixedNumber)
 	  	  end
 
 	  	  it 'amount is a mixed number when retrieved' do
-	  	    expect(Item.find(@item.id).amount).to be_a(MixedNumber)
+	  	  	item = Item.create(amount: 0)
+	  	    expect(Item.find(item.id).amount).to be_a(MixedNumber)
 	  	  end
 	  	end
+
+	  	# TODO - test sort
 	    
 	  end
 
