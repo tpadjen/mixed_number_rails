@@ -1,0 +1,34 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("amount", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["amount", 1.5], ["created_at", "2015-05-16 18:21:07.186672"], ["updated_at", "2015-05-16 18:21:07.186672"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items"  WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("amount", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["amount", 1.5], ["created_at", "2015-05-16 18:22:11.617718"], ["updated_at", "2015-05-16 18:22:11.617718"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("amount", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["amount", 1.5], ["created_at", "2015-05-16 18:24:15.839642"], ["updated_at", "2015-05-16 18:24:15.839642"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("amount", "created_at", "updated_at") VALUES (?, ?, ?)  [["amount", 1.5], ["created_at", "2015-05-16 18:24:15.843773"], ["updated_at", "2015-05-16 18:24:15.843773"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items"  WHERE "items"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("amount", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["amount", 1.5], ["created_at", "2015-05-16 18:26:18.390859"], ["updated_at", "2015-05-16 18:26:18.390859"]]
+  [1m[35m (4.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("amount", "created_at", "updated_at") VALUES (?, ?, ?)  [["amount", 1.5], ["created_at", "2015-05-16 18:26:18.400402"], ["updated_at", "2015-05-16 18:26:18.400402"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items"  WHERE "items"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("amount", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["amount", 1.5], ["created_at", "2015-05-16 18:26:34.043627"], ["updated_at", "2015-05-16 18:26:34.043627"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("amount", "created_at", "updated_at") VALUES (?, ?, ?)  [["amount", 1.5], ["created_at", "2015-05-16 18:26:34.047755"], ["updated_at", "2015-05-16 18:26:34.047755"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items"  WHERE "items"."id" = ? LIMIT 1  [["id", 8]]
