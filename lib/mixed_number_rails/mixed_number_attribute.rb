@@ -6,8 +6,20 @@ module MixedNumberRails
 			def mixed_number_attribute(attribute)
 				serialize attribute, MixedNumber
 
+				validate "validate_#{attribute}"
+
+				define_method("validate_#{attribute}") do
+					if read_attribute(attribute).is_a?(NullMixedNumber)
+						errors.add(attribute, "is not a valid mixed number")
+					end
+				end
+
 				define_method(attribute.to_s + '=') do |value|
-					write_attribute(attribute, MixedNumber(value))
+					if value == nil
+						write_attribute(attribute, value)
+					else
+						write_attribute(attribute, MixedNumber(value))
+					end
 				end
 			end
 		end
