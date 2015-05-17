@@ -9,11 +9,13 @@ describe 'Mixed Number Rails' do
 	  	end
 
 	  	it 'returns a MixedNumber' do
-	  	  expect(MixedNumber.load(BigDecimal(1.5, 3))).to be_a(MixedNumber)
+	  		code = "33.333333333333333333333333333333:33:1:5:--encoded--"
+	  	  expect(MixedNumber.load(code)).to be_a(MixedNumber)
 	  	end
 
 	  	it 'loads the data correctly' do
-	  	  expect(MixedNumber.load(BigDecimal(1.5, 3))).to eq(1.5)
+	  		code = "33.333333333333333333333333333333:33:1:5:--encoded--"
+	  	  expect(MixedNumber.load(code)).to eq(33.2)
 	  	end
 	  end
 
@@ -29,8 +31,8 @@ describe 'Mixed Number Rails' do
 	  	end
 
 	  	it 'dumps the data correctly' do
-	  	  expect(MixedNumber.dump(MixedNumber(1.5))).to be_a(BigDecimal)
-	  	  expect(MixedNumber.dump(MixedNumber(1.5))).to eq(1.5)
+	  	  expect(MixedNumber.dump(MixedNumber(1.5))).to be_a(String)
+	  	  expect(MixedNumber.dump(MixedNumber(1.5))).to eq("1.5000000000000000000000000000000:1:1:2:--encoded--")
 	  	end
 	  end
 

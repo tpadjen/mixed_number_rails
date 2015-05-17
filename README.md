@@ -20,9 +20,9 @@ Or install it yourself as:
 **rails_mixed_number** is based on my general purpose [mixed_number](https://github.com/tpadjen/mixed_number) ruby gem. Go there for examples on using MixedNumber objects.
 
 ### Hooking up with Rails
-1. Create a model with a decimal attribute
+1. Create a model with a string attribute
 	```sh
-	? rails g model Item amount:decimal
+	? rails g model Item amount:string
 	```
 2. Open the model file you just generated and add `mixed_number_attribute` with the name of your attribute
 	```ruby

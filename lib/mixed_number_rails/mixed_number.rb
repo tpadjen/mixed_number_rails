@@ -12,8 +12,8 @@ class MixedNumber
 			NullMixedNumber.new
 		end
 
-		def load(decimal)
-			self.parse(decimal)
+		def load(n)
+			self.parse(decode(n))
 		end
 
 		def dump(obj)
@@ -24,8 +24,30 @@ class MixedNumber
 	        "Attribute was supposed to be a #{self}, but was a #{obj.class}. -- #{obj.inspect}"
 	    end
 
-	    obj.to_m.to_d
+	    encode(obj.to_m)
 		end
+
+		private
+
+			def encode(mixed)
+				f = ("%.32f" % mixed.to_f)[0..32]
+				w = mixed.whole.to_s
+				n = mixed.fraction.numerator.to_s
+				d = mixed.fraction.denominator.to_s
+				[f, w, n, d].join(":") + ":--encoded--"
+			end
+
+			def decode(n)
+				return n if !n
+
+				if n =~ /--encoded--/
+					f, w, n, d = *n.split(':')
+					"#{w} #{n}/#{d}"
+				else
+					n.to_m
+				end
+
+			end
 	end
 
 end
